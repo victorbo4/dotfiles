@@ -32,6 +32,7 @@ alias lt3='eza --tree --level=3 --icons'    # Tres niveles (visión profunda)
 
 alias f='fd'
 alias cd='z'
+alias vi='nvim'
 alias matrix='cmatrix -C blue -b'
 alias limpiar='sudo pacman -Sc && sudo pacman -Rs $(pacman -Qdtq)'
 alias bye='systemctl poweroff'
