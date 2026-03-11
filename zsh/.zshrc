@@ -23,6 +23,7 @@ alias conf-waybar='nvim ~/.config/waybar/config.jsonc'
 alias conf-star='nvim ~/.config/starship.toml'
 alias conf-kitty='nvim ~/.config/kitty/kitty.conf'
 alias conf-nvim='nvim ~/.config/nvim/init.lua'
+alias dots='cd ~/dotfiles'
 
 # Navegación
 alias ls='eza --icons --group-directories-first'
