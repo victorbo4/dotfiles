@@ -1,0 +1,35 @@
+[opener]
+# Definimos las apps que TÚ quieres usar
+edit = [
+    { run = 'kitty -e nvim "$@"', block = true, desc = "Neovim" },
+]
+image = [
+    { run = 'imv "$@"', detach = true, desc = "IMV" },
+]
+video = [
+    { run = 'mpv "$@"', detach = true, desc = "MPV" },
+]
+pdf = [
+    { run = 'zathura "$@"', detach = true, desc = "Zathura" },
+]
+
+[open]
+rules = [
+    # Si el archivo es PDF, usa Zathura (ignorando a Firefox)
+    { mime = "application/pdf", use = "pdf" },
+    
+    # Si es imagen, usa IMV
+    { mime = "image/*", use = "image" },
+    
+    # Si es video, usa MPV
+    { mime = "video/*", use = "video" },
+    
+    # Si es texto o código, usa Neovim
+    { mime = "text/*", use = "edit" },
+    { name = "*.py",   use = "edit" },
+    { name = "*.md",   use = "edit" },
+    { name = "*.sh",   use = "edit" },
+
+    # Para todo lo demás que no sepamos, que intente abrir con el sistema
+    { name = "*", use = "open" }
+]
