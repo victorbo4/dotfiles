@@ -37,7 +37,7 @@ alias vi='nvim'
 alias matrix='cmatrix -C blue -b'
 alias limpiar='sudo pacman -Sc && sudo pacman -Rs $(pacman -Qdtq)'
 alias bye='systemctl poweroff'
-
+alias musica-dl='yt-dlp -x --audio-format opus --audio-quality 0 -o "~/media/music/%(title)s.%(ext)s"'
 alias pdf='zathura'
 alias img='imv'
 alias tiempotalavera='curl es.wttr.in/Talavera+de+la+Reina'
@@ -55,21 +55,21 @@ function chpwd() {
 }
 
 # 1. Radio Lofi Hip Hop (La clásica)
-lofi() {
+radiolofi() {
     _play_radio "https://www.youtube.com/watch?v=jfKfPfyJRdk"
 }
 
 # 2. Radio Synthwave (Estética futurista/gaming)
-synth() {
+radiosynth() {
     _play_radio "https://www.youtube.com/watch?v=4xDzrJKXOOY"
 }
 
 # 3. Radio Jazz (Cafetería/Chill)
-jazz() {
+radiojazz() {
     _play_radio "https://www.youtube.com/watch?v=ZaBS6sLsHJQ"
 }
 
-# Función interna para no repetir código (Ingeniería de software 101)
+# Función interna para no repetir código 
 _play_radio() {
     # Lanzar mpv en background
     mpv --no-video --really-quiet "$1" & 

@@ -1,0 +1,42 @@
+[global]
+    ### Aspecto Visual ###
+    monitor = 0
+    follow = mouse
+    width = 300
+    height = 100
+    origin = top-right
+    offset = 15x15
+    scale = 0
+    
+    # Bordes y Redondeo (Como tu Waybar)
+    frame_width = 2
+    corner_radius = 10
+    
+    # Fuente
+    font = JetBrainsMono NF 11
+    
+    # Separación entre notificaciones
+    separator_height = 2
+    padding = 12
+    horizontal_padding = 12
+    text_icon_padding = 10
+
+    icon_path = /usr/share/icons/Papirus-Dark/16x16/status/:/usr/share/icons/Papirus-Dark/16x16/devices/:/usr/share/icons/Papirus-Dark/16x16/apps/
+
+[urgency_low]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#89b4fa" # Azul Mocha
+    timeout = 5
+
+[urgency_normal]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#cba6f7" # Morado (Mauve) Mocha
+    timeout = 10
+
+[urgency_critical]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#f38ba8" # Rojo Mocha
+    timeout = 0

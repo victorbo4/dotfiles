@@ -1,0 +1,75 @@
+configuration {
+    modi: "drun,run,window";
+    show-icons: true;
+    display-drun: " ";
+    display-run: " ";
+    display-window: " ";
+    drun-display-format: "{name}";
+    font: "JetBrainsMono NF 11";
+}
+
+@theme "catppuccin-mocha"
+
+window {
+    width: 600px;
+    border: 2px;
+    border-color: @mauve;
+    border-radius: 12px;
+    background-color: @base;
+    padding: 20px;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [inputbar, listview];
+}
+
+inputbar {
+    children: [prompt, entry];
+    background-color: @surface0;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 0 0 10px 0;
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @blue;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @text;
+    placeholder: "Buscar...";
+}
+
+listview {
+    columns: 1;
+    lines: 8;
+    background-color: transparent;
+    fixed-height: true;
+}
+
+element {
+    padding: 8px;
+    border-radius: 6px;
+    background-color: transparent;
+    text-color: @text;
+}
+
+element selected {
+    background-color: @surface1;
+    text-color: @mauve;
+}
+
+element-icon {
+    size: 24px;
+    padding: 0 10px 0 0;
+    background-color: transparent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+}
