@@ -150,6 +150,29 @@ require("lazy").setup({
     ft = { "markdown" }, -- Solo se carga cuando abres un .md (eficiencia Arch)
   },
 
+  -- Autopairs: Cierra paréntesis, llaves, etc. automáticamente
+  {
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup({})
+    end
+  },
+
+  -- Git integration: LazyGit (La terminal definitiva para Git)
+  {
+    "kdheepak/lazygit.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      -- Atajo: Espacio + g + g para abrir LazyGit en una ventana flotante
+      vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true, desc = "LazyGit" })
+      
+      -- Opcional: Configuración para que se vea bien en terminales con fondo transparente (como en Hyprland)
+      vim.g.lazygit_floating_window_winblend = 0 -- 0 para opaco, >0 para transparencia
+      vim.g.lazygit_floating_window_scaling_factor = 0.9 -- Tamaño de la ventana (90% de la pantalla)
+    end
+  },
 })
 
 -- Al pulsar 'K' sobre una función, te enseña la documentación (LSP)
@@ -166,3 +189,4 @@ vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Mover a la izquierda' })
 vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Mover abajo' })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Mover arriba' })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Mover a la derecha' })
+vim.keymap.set('n', '<leader>l', ':noh<CR>', { desc = 'Limpiar resaltado de búsqueda' })

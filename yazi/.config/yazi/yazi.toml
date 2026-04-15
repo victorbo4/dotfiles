@@ -1,16 +1,15 @@
 [opener]
-# Definimos las apps que TÚ quieres usar
 edit = [
-    { run = 'kitty -e nvim "$@"', block = true, desc = "Neovim" },
-]
-image = [
-    { run = 'imv "$@"', detach = true, desc = "IMV" },
-]
-video = [
-    { run = 'mpv "$@"', detach = true, desc = "MPV" },
+    { run = 'nvim "%s"', block = true, for = "unix", desc = "Neovim" },
 ]
 pdf = [
-    { run = 'zathura "$@"', detach = true, desc = "Zathura" },
+    { run = 'zathura "%s"', orphan = true, for = "unix", desc = "Zathura" },
+]
+image = [
+    { run = 'imv "%s"', orphan = true, for = "unix", desc = "IMV" },
+]
+video = [
+    { run = 'mpv "%s"', orphan = true, for = "unix", desc = "MPV" },
 ]
 
 [open]

@@ -30,17 +30,25 @@ alias ls='eza --icons --group-directories-first'
 alias ll='eza -lha --icons --git --group-directories-first'
 alias lt2='eza --tree --level=2 --icons'    # Dos niveles (ideal para ver archivos dentro de carpetas)
 alias lt3='eza --tree --level=3 --icons'    # Tres niveles (visión profunda)
+alias ..='cd ..'
+alias ...='cd ../..'
 
+# Básicos
 alias f='fd'
 alias cd='z'
 alias vi='nvim'
-alias matrix='cmatrix -C blue -b'
 alias limpiar='sudo pacman -Sc && sudo pacman -Rs $(pacman -Qdtq)'
 alias bye='systemctl poweroff'
-alias musica-dl='yt-dlp -x --audio-format opus --audio-quality 0 -o "~/media/music/%(title)s.%(ext)s"'
 alias pdf='zathura'
 alias img='imv'
+
+
+# Misc
+alias matrix='cmatrix -C blue -b'
 alias tiempotalavera='curl es.wttr.in/Talavera+de+la+Reina'
+alias musica-dl='yt-dlp -x --audio-format opus --audio-quality 0 -o "~/media/music/%(title)s.%(ext)s"'
+
+
 
 # --- FUNCIONES ---
 
@@ -69,6 +77,15 @@ radiojazz() {
     _play_radio "https://www.youtube.com/watch?v=ZaBS6sLsHJQ"
 }
 
+radiodoom() {
+    _play_radio "https://www.youtube.com/watch?v=Q9zggPQQSqk"
+}
+
+
+radiorave() {
+    _play_radio "https://www.youtube.com/watch?v=AswR2woOGj0"
+}
+
 # Función interna para no repetir código 
 _play_radio() {
     # Lanzar mpv en background
@@ -92,6 +109,19 @@ function y() {
 		builtin cd -- "$cwd"
 	fi
 	rm -f -- "$tmp"
+}
+
+fweb() {
+    w3m "https://html.duckduckgo.com/html/?q=$*"
+}
+
+web() {
+    firefox "https://www.qwant.com/?q=$*" &!
+}
+
+# Compila y ejecuta en un solo comando
+function runc() {
+    gcc -Wall -Wextra -O2 "$1" -o out && ./out && rm out
 }
 
 # Alias extra por si te olvidas
